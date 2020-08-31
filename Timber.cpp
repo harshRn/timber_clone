@@ -249,6 +249,9 @@ int main()
 		//Start the game
 		if (Keyboard::isKeyPressed(Keyboard::Return))
 		{
+			std::stringstream ss;
+			ss << "Score = " << 0;
+			scoreText.setString(ss.str());
 			paused = false;
 
 			//reset the time and score
@@ -294,6 +297,12 @@ int main()
 				logActive = true;
 				acceptInput = false;
 
+				//Update the score text
+				std::stringstream ss;
+				ss << "Score = " << score;
+				scoreText.setString(ss.str());
+
+
 				//Play the chop sound
 				chop.play();
 			}
@@ -318,6 +327,12 @@ int main()
 				logSpeedX = 5000;
 				logActive = true;
 				acceptInput = false;
+
+				//Update the score text
+				std::stringstream ss;
+				ss << "Score = " << score;
+				scoreText.setString(ss.str());
+
 				//Play the chop sound
 				chop.play();
 			}
@@ -467,10 +482,10 @@ int main()
 					cloud3Active = false;
 				}
 			}
-			//Update the score text
+			/*//Update the score text
 			std::stringstream ss;
 			ss << "Score = " << score;
-			scoreText.setString(ss.str());
+			scoreText.setString(ss.str());*/
 
 			//update the branch sprites
 			for (int i = 0; i < NUM_BRANCHES; i++)
